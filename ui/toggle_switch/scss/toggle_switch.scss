@@ -26,9 +26,9 @@ body {
   font-size: 30px;
   border-top: 2px solid #000;
   border-bottom: 2px solid #fff;
-  -webkit-perspective: 100;
-  -moz-perspective: 100;
-  perspective: 100;
+  -webkit-perspective: 100px;
+  -moz-perspective: 100px;
+  perspective: 100px;
 
   div {
     position: absolute;
