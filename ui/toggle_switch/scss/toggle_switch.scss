@@ -6,13 +6,9 @@ $transition: 500ms;
 $delay: 100ms;
 
 body {
-  background: rgba(200, 200, 255, 0.2);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1.00, #d0c8c8), color-stop(0.00, #fff));
-  background: -webkit-linear-gradient(#fff, #d0c8c8);
-  background: -moz-linear-gradient(#fff, #d0c8c8);
-  background: -o-linear-gradient(#fff, #d0c8c8);
-  background: -ms-linear-gradient(#fff, #d0c8c8);
-  background: linear-gradient(#fff, #d0c8c8);
+  background: -moz-linear-gradient(top,  #fff 30%, #d0c8c8 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fff 30%,#d0c8c8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fff 30%,#d0c8c8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 #ui {
   width: 50px;
@@ -44,7 +40,7 @@ body {
     background: -webkit-linear-gradient(left,  rgba(255,117,117,1) 0%,rgba(209,16,16,1) 40%,rgba(135,10,10,1) 81%,rgba(109,8,8,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(255,117,117,1) 0%,rgba(209,16,16,1) 40%,rgba(135,10,10,1) 81%,rgba(109,8,8,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-    border-right: 2px solid rgba(50, 0, 0, 0.8);
+    box-shadow: -7px 31px 45px -8px rgba(230,0,0,1) inset;
 
     &:before {
       content: "";

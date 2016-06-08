@@ -9,14 +9,12 @@ body {
   background: rgba(200, 200, 255, 0.2);
 }
 #ui {
-  height: 10%;
+  height: 80px;
   color: #fff;
   font-size: 40px;
   font-family: 'Dosis', sans-serif;
   transition: $transition;
   transition-timing-function: ease-in-out;
-  min-width: 100px;
-  min-height: 80px;
   overflow: hidden;
 
   &.on {

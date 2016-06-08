@@ -1,3 +1,6 @@
+document.write('<script src="/js/jquery-2.2.4.min.js"></script>');
+document.write('<script src="/js/velocity.min.js"></script>');
+
 window.onload = function() {
   var btn = document.getElementById('ui');
   var timer = (btn.getAttribute('data-timing')) ? parseInt(btn.getAttribute('data-timing')) : 4000;

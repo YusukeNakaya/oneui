@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+#ui {
+  margin: -110px 0 0 -110px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -106px;
+    left: -106px;
+    width: 430px;
+    height: 430px;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.05);
+    border: 45px dotted #fff;
+    animation: secondaryRotate 30s linear infinite;
+  }
+
+  #primary {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 999px;
+    animation: primaryRotate 6s linear infinite;
+    transition: 400ms;
+    transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 33px;
+      left: 33px;
+      width: 45px;
+      height: 45px;
+      background: #fff;
+      border-radius: 999px;
+      border: 5px dotted #000;
+      animation: secondaryRotate 1s linear infinite;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 999px;
+      border: 2px dotted #000;
+      box-sizing: border-box;
+    }
+    .gear {
+      position: absolute;
+      top: 42px;
+      left: -8px;
+      width: 116px;
+      height: 16px;
+      background: rgba(0, 0, 0, 1);
+      border-radius: 3px;
+
+      @for $value from 0 to 8 {
+        &:nth-child(#{$value + 1}) {
+          transform: rotateZ(30deg * $value);
+        }
+      }
+    }
+  }
+  #secondary {
+    position: absolute;
+    top: 84px;
+    left: 84px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 999px;
+    transition: 400ms;
+    transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      border-radius: 999px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 999px;
+      border: 6px dotted #000;
+      box-sizing: border-box;
+    }
+    .gear {
+      position: absolute;
+      top: 20px;
+      left: -8px;
+      width: 66px;
+      height: 10px;
+      background: rgba(0, 0, 0, 1);
+      border-radius: 3px;
+
+      @for $value from 0 to 4 {
+        &:nth-child(#{$value + 1}) {
+          transform: rotateZ(45deg * $value + 3);
+        }
+      }
+    }
+    .moon {
+      position: absolute;
+      top: -180px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border-right: 8px solid rgba(240, 240, 0, 1);
+      background: rgba(180, 180, 0, 1);
+      transition: 2s;
+      box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+    }
+  }
+  &.off {
+    #primary {
+      margin-top: -30px;
+    }
+  }
+  &.on {
+    #primary {
+      margin-top: 0;
+    }
+    #secondary {
+      animation: secondaryRotate 4s linear infinite;
+
+      .moon {
+        animation: primaryRotate 4s linear infinite;
+      }
+    }
+  }
+}
+@keyframes primaryRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes secondaryRotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
