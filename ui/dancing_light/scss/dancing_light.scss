@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+body {
+  background: #333;
+}
+#ui {
+  width: 300px;
+  height: 300px;
+
+  .ball {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 20px;
+    margin-top: -10px;
+    transform-origin: 0 50%;
+    opacity: 0.7;
+
+    @for $value from 0 to 6 {
+      &:nth-child(#{$value + 1}) {
+        width: 150px - 20 * $value;
+        animation: rotation 3000ms - $value * 200 linear infinite;
+        // opacity: 0.1 + $value * 0.2;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 35px;
+      height: 20px;
+      background: #fff;
+      border-radius: 100%;
+      opacity: 0.7;
+      box-shadow: 0 0 20px 30px #fff;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 20px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 100%;
+      box-shadow: 0 0 10px 20px #fff;
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
