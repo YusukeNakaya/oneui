@@ -34,12 +34,13 @@ body {
       position: absolute;
       width: 20px;
       height: 20px;
-      margin: -60px 0 0 200px;
+      margin: -50px 0 0 200px;
       border-radius: 0 0 100% 0;
       border-right: 4px solid red;
       border-bottom: 4px solid red;
       transform: scale(0);
-      transition: all 400ms cubic-bezier(0.000, 0.885, 1.000, 3) 800ms;
+      transition: 500ms;
+      // transition: all 400ms cubic-bezier(0.000, 0.885, 1.000, 3) 800ms;
 
       &:before {
         content: "";
@@ -82,7 +83,8 @@ body {
   }
   &.on {
     .angry {
-      transform: scale(1);
+      // transform: scale(1);
+      animation: angryScale 1000ms cubic-bezier(0.645, 0.045, 0.355, 1.000) 600ms infinite;
     }
     li:nth-child(2) {
       animation: knockdown 4000ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -91,6 +93,24 @@ body {
       color: red;
       animation: pressure 800ms cubic-bezier(0.215, 0.610, 0.355, 1.000) 1200ms 3;
     }
+  }
+}
+
+@keyframes angryScale {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(-1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }
 
